@@ -1,3 +1,5 @@
+/* ToDo WebApp 2.0 - Enhanced UI & UX with LocalStorage */
+
 * {
   margin: 0;
   padding: 0;
@@ -5,23 +7,36 @@
 }
 
 body {
-  background-color: #ec5766;
+  background-color: #f4f7f6;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
   width: 400px;
   background-color: #fff;
   padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 input {
   width: 100%;
   padding: 10px;
   display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db; /* Blue */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
 }
 
 .todos {
@@ -29,7 +44,7 @@ input {
 }
 
 .todo {
-  border-left: 4px solid #ec5766;
+  border-left: 4px solid #3498db;
   padding: 5px;
   color: rgb(75, 75, 75);
   display: flex;
@@ -37,6 +52,11 @@ input {
   align-items: center;
   font-size: 1.2em;
   margin-bottom: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.todo:hover {
+  background-color: #f9f9f9;
 }
 
 .todo span:first-child {
@@ -50,6 +70,17 @@ input {
 }
 
 .delete {
-  color: #d91e36;
+  color: #ee4b2b;
   cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 4px;
+}
+
+.delete:hover {
+  color: #e74c3c;
+}
+
+.delete svg {
+  display: block;
+  stroke: currentColor;
 }
