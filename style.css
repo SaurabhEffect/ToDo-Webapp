@@ -1,4 +1,4 @@
-/* ToDo WebApp 2.0 - Enhanced UI & UX with LocalStorage */
+/* ToDo WebApp 2.1 - Added Task Filtering */
 
 * {
   margin: 0;
@@ -39,8 +39,30 @@ input:focus {
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
 }
 
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.filter-btn {
+  color: #888;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: #555;
+}
+
+.filter-btn.active {
+  color: #3498db; /* Active filter is blue */
+}
+
 .todos {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 .todo {
