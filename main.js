@@ -1,5 +1,4 @@
-// ToDo WebApp 2.1 - Added Task Filtering
-// Refactored code
+// ToDo WebApp 3.0 - Added Edit & Drag/Drop
 
 const form = document.querySelector("form");
 const input = document.querySelector("input");
@@ -32,6 +31,11 @@ function setupEventListeners() {
       setFilter(btn.dataset.filter);
     });
   });
+
+  todosContainer.addEventListener("dragover", (e) => {
+    e.preventDefault(); // Allow dropping
+  });
+  todosContainer.addEventListener("drop", handleDrop);
 }
 
 function render() {
@@ -43,24 +47,68 @@ function render() {
       btn.classList.remove("active");
     }
   });
+
   const filteredTodos = getFilteredTodos();
-  filteredTodos.forEach((todo) => {
-    const todoEl = createTodoElement(todo);
-    todosContainer.appendChild(todoEl);
-  });
+  if (filteredTodos.length === 0) {
+    todosContainer.innerHTML = `<span class="no-todos">No tasks ${
+      state.filter === "all" ? "" : state.filter
+    }</span>`;
+  } else {
+    filteredTodos.forEach((todo) => {
+      const todoEl = createTodoElement(todo);
+      todosContainer.appendChild(todoEl);
+    });
+  }
 }
 
 function createTodoElement(todo) {
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
+  todoDiv.dataset.id = todo.id;
+  todoDiv.draggable = true;
+
   if (todo.completed) {
     todoDiv.classList.add("completed");
   }
-
+  let clickTimer = null;
   const textEl = document.createElement("span");
   textEl.innerHTML = todo.text;
   textEl.addEventListener("click", () => {
-    toggleTodo(todo.id);
+    if (todoDiv.classList.contains("editing")) {
+      return;
+    }
+    clearTimeout(clickTimer);
+    clickTimer = setTimeout(() => {
+      toggleTodo(todo.id);
+    }, 200);
+  });
+
+  textEl.addEventListener("dblclick", (e) => {
+    clearTimeout(clickTimer);
+    const parent = e.target.closest(".todo");
+    if (parent.classList.contains("completed")) {
+      return;
+    }
+    parent.classList.add("editing");
+    const editInput = document.createElement("input");
+    editInput.classList.add("edit-input");
+    editInput.value = todo.text;
+    parent.appendChild(editInput);
+    editInput.focus();
+    editInput.addEventListener("blur", () => {
+      if (document.body.contains(parent)) {
+        editTodo(todo.id, editInput.value.trim());
+      }
+    });
+
+    editInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        editInput.blur();
+      }
+      if (e.key === "Escape") {
+        render();
+      }
+    });
   });
 
   const closeEl = document.createElement("span");
@@ -72,6 +120,13 @@ function createTodoElement(todo) {
 
   todoDiv.appendChild(textEl);
   todoDiv.appendChild(closeEl);
+  todoDiv.addEventListener("dragstart", (e) => {
+    e.target.classList.add("dragging");
+    e.dataTransfer.setData("text/plain", todo.id);
+  });
+  todoDiv.addEventListener("dragend", (e) => {
+    e.target.classList.remove("dragging");
+  });
   return todoDiv;
 }
 
@@ -85,6 +140,33 @@ function getFilteredTodos() {
     default:
       return state.todos;
   }
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  const draggedId = e.dataTransfer.getData("text/plain");
+  const afterElement = getDragAfterElement(todosContainer, e.clientY);
+  const afterId = afterElement ? afterElement.dataset.id : null;
+  reorderTodos(draggedId, afterId);
+}
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [
+    ...container.querySelectorAll(".todo:not(.dragging)"),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
 }
 
 function addTodo(text) {
@@ -117,11 +199,36 @@ function setFilter(filter) {
   render();
 }
 
+function editTodo(id, newText) {
+  if (newText === "") {
+    deleteTodo(id);
+  } else {
+    state.todos = state.todos.map((todo) =>
+      todo.id === id ? { ...todo, text: newText } : todo
+    );
+    saveState();
+    render();
+  }
+}
+
+function reorderTodos(draggedId, afterId) {
+  const draggedTodo = state.todos.find((todo) => todo.id === draggedId);
+  state.todos = state.todos.filter((todo) => todo.id !== draggedId);
+  if (afterId === null) {
+    state.todos.push(draggedTodo);
+  } else {
+    const targetIndex = state.todos.findIndex((todo) => todo.id === afterId);
+    state.todos.splice(targetIndex, 0, draggedTodo);
+  }
+  saveState();
+  render();
+}
+
 function saveState() {
   localStorage.setItem("todos", JSON.stringify(state.todos));
 }
 
 function loadState() {
-  const savedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
-  state.todos = savedTodos;
+  const savedTasks = JSON.parse(localStorage.getItem("todos") || "[]");
+  state.todos = savedTasks;
 }

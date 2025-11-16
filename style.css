@@ -1,4 +1,4 @@
-/* ToDo WebApp 2.1 - Added Task Filtering */
+/* ToDo WebApp 3.0 - Added Edit & Drag/Drop */
 
 * {
   margin: 0;
@@ -58,11 +58,19 @@ input:focus {
 }
 
 .filter-btn.active {
-  color: #3498db; /* Active filter is blue */
+  color: #3498db;
 }
 
 .todos {
   margin-top: 1.5em;
+  min-height: 50px;
+}
+
+.no-todos {
+  display: block;
+  text-align: center;
+  color: #aaa;
+  margin-top: 1em;
 }
 
 .todo {
@@ -74,7 +82,7 @@ input:focus {
   align-items: center;
   font-size: 1.2em;
   margin-bottom: 1em;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .todo:hover {
@@ -83,6 +91,8 @@ input:focus {
 
 .todo span:first-child {
   cursor: pointer;
+  word-break: break-word;
+  padding-right: 10px;
 }
 
 .todo.completed {
@@ -91,11 +101,37 @@ input:focus {
   opacity: 0.6;
 }
 
+.todo.dragging {
+  opacity: 0.5;
+  background-color: #cceeff;
+}
+
+.todo.editing span:first-child {
+  display: none;
+}
+
+.edit-input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: rgb(75, 75, 75);
+  padding: 0;
+  border: none;
+  width: 100%;
+  margin: -5px 0;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px solid #3498db;
+}
+
 .delete {
-  color: #ee4b2b;
+  color: #888888;
   cursor: pointer;
   transition: color 0.2s ease;
   padding: 4px;
+  flex-shrink: 0;
 }
 
 .delete:hover {
