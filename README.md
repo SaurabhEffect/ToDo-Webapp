@@ -1,289 +1,294 @@
-# ✅ ToDo Web Application - v3.0
+# ✅ ToDo Web Application - v3.1
 
 A clean and modern to-do list application built with HTML5, CSS3, and vanilla JavaScript. Add tasks, mark them as completed, and delete them with ease.
 
-**NEW in v3.0: Inline Task Editing, Drag & Drop Reordering, Empty State Message, and Enhanced UX!**
+**NEW in v3.1: Dark/Light Theme Toggle, CSS Variables, Enhanced Theming, and Persistent Theme Preference!**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![LocalStorage](https://img.shields.io/badge/LocalStorage-Persistence-blue?style=for-the-badge)
 ![DragDrop](https://img.shields.io/badge/Drag%20Drop-Reorder-green?style=for-the-badge)
+![Theme](https://img.shields.io/badge/Theme-Dark%20&%20light-yellow?style=for-the-badge)
 
-**Smart Editing. Beautiful Reordering. Intuitive Design.** 🎯
+**Smart Editing. Beautiful Reordering. Dark & Light Themes.** 🎯
 
 ---
 
-## 🆕 What's New in v3.0
+## 🆕 What's New in v3.1
 
-### ✏️ **Inline Task Editing** ⭐⭐ NEW (MAJOR)
+### 🌙 **Dark/Light Theme Toggle** ⭐⭐ NEW (MAJOR)
 
-- **Double-Click to Edit** - Quick inline editing of tasks
-- **Edit Input Field** - Styled input for seamless editing
-- **Enter to Save** - Press Enter to confirm changes
-- **Escape to Cancel** - Press Escape to discard changes
-- **Blur to Save** - Auto-save when clicking away
-- **Visual Editing Mode** - Clear indication when in edit mode
-- **Empty Text Delete** - Delete task if emptied during edit
-- **Completed Tasks Read-Only** - Can't edit finished tasks
+- **Theme Toggle Button** - Top-right corner button
+- **Sun/Moon SVG Icons** - Visual theme indicators
+- **Light Mode** - Default light gray (#f4f7f6) background
+- **Dark Mode** - Professional dark (#1a1a1a) background
+- **Instant Theme Switch** - No page reload required
+- **Smooth Transitions** - 0.3s ease color transitions
+- **Click to Toggle** - Single click to change theme
+- **Professional Icon Design** - Custom SVG sun/moon icons
 
-### 🔄 **Drag & Drop Reordering** ⭐⭐ NEW (MAJOR)
+### 🎨 **CSS Variables System** ⭐⭐ NEW (MAJOR)
 
-- **Drag Tasks** - Grab and drag tasks to reorder
-- **Drop Position Detection** - Smart insertion positioning
-- **Visual Feedback** - Dragging state styling
-- **Drop Zone** - Entire container is drop target
-- **Smooth Reordering** - No page reload required
-- **Persistent Order** - Order saved to localStorage
-- **Intuitive UI** - Natural drag-drop interaction
-- **Performance Optimized** - Efficient DOM updates
+- **Root Color Variables** - Centralized color management
+- **Dynamic Color Switching** - Update via CSS variables
+- **Light Mode Variables** - Complete color palette
+- **Dark Mode Variables** - Full dark theme colors
+- **Smooth Transitions** - All color changes animated
+- **Easy Customization** - Change colors in one place
+- **Scalable Design** - Easy to extend themes
+- **Professional Implementation** - Industry-standard approach
 
-### 📭 **Empty State Message** ⭐ NEW
+### 🌈 **Enhanced Color Palette** ⭐⭐ NEW (MAJOR)
 
-- **No Tasks Display** - Shows "No tasks" when empty
-- **Filter-Aware Message** - Shows "No tasks active" or "No tasks completed"
-- **Styled Message** - Gray centered text
-- **Better UX** - Clear indication of empty filters
-- **Dynamic Updates** - Message updates with filters
-- **Placeholder Content** - 50px minimum height
+**Light Mode Colors:**
 
-### 🎨 **Enhanced Visual Design** ⭐ NEW
+- Background: #f4f7f6 (light gray)
+- Container: #ffffff (white)
+- Text: rgb(75, 75, 75) (dark gray)
+- Input Border: #ddd (light gray)
+- Pending Border: #3498db (blue)
+- Completed Border: #5cb85c (green)
+- Delete Hover: #e74c3c (red)
+- Dragging Background: #cceeff (light blue)
 
-- **Dragging Opacity** - 0.5 opacity while dragging
-- **Dragging Background** - Light blue background (#cceeff)
-- **Edit Mode Styling** - Hidden text, visible input
-- **Hover Effects** - Better visual feedback
-- **Color Transitions** - Smooth state changes
-- **Professional Appearance** - Polish and refinement
+**Dark Mode Colors:**
 
-### 💡 **Improved User Experience** ⭐ NEW
+- Background: #1a1a1a (very dark)
+- Container: #2b2b2b (dark gray)
+- Text: #e0e0e0 (light gray)
+- Input Border: #444 (dark gray)
+- Dragging Background: #00334d (dark blue)
+- All other colors optimized for dark mode
 
-- **Dual-Click Behavior** - Single click to toggle, double-click to edit
-- **Click Timer** - 200ms debounce for double-click detection
-- **Keyboard Support** - Enter to save, Escape to cancel
-- **Editing State** - `editing` class on todo element
-- **Word Breaking** - Long task text wraps properly
-- **Delete Color** - Changed to gray (#888888)
+### 💾 **Theme Persistence** ⭐ NEW
 
-### ✅ **Complete Feature Set** (v2.1 Features Retained)
+- **localStorage Integration** - Save theme preference
+- **Auto-Load Theme** - Restore on page reload
+- **Separate Storage** - Theme saved independently
+- **Smart Loading** - Defaults to "light" if not set
+- **Immediate Application** - Theme applied on load
+- **State Management** - Integrated with app state
+
+### 🎭 **Visual Improvements** ⭐ NEW
+
+- **Icon Positioning** - Absolute positioning top-right
+- **Hover Effects** - Color changes on hover
+- **Smooth Animations** - All transitions smooth
+- **Contrast** - Proper text/background contrast
+- **Accessibility** - Readable in both themes
+- **Professional Look** - Polish and refinement
+
+### ✅ **Complete Feature Set** (v3.0 Features Retained)
 
 - **Add Tasks** - Input form with validation
 - **Mark Complete** - Click task to toggle completion
 - **Delete Tasks** - SVG trash icon
-- **Filter Tasks** - All, Active, Completed filters
-- **LocalStorage** - Persist tasks across sessions
-- **Google Fonts** - Roboto typography
-- **State Management** - Centralized state object
-- **Unique Task IDs** - Timestamp-based IDs
+- **Filter Tasks** - All, Active, Completed
+- **Edit Inline** - Double-click to edit
+- **Drag & Drop** - Reorder tasks easily
+- **Empty State** - "No tasks" message
+- **LocalStorage** - Persist all data
 
 ---
 
 ## 🎯 Features
 
-### ✏️ Inline Editing System
+### 🌙 Theme System
 
-**Double-Click to Edit:**
+**Light Mode (Default):**
 
-```javascript
-textEl.addEventListener("dblclick", (e) => {
-  // Skip if already editing or completed
-  const parent = e.target.closest(".todo");
-  if (parent.classList.contains("completed")) return;
-
-  // Enter editing mode
-  parent.classList.add("editing");
-  const editInput = document.createElement("input");
-  editInput.classList.add("edit-input");
-  editInput.value = todo.text;
-  parent.appendChild(editInput);
-  editInput.focus();
-});
-```
-
-**Save on Blur or Enter:**
-
-```javascript
-editInput.addEventListener("blur", () => {
-  if (document.body.contains(parent)) {
-    editTodo(todo.id, editInput.value.trim());
-  }
-});
-
-editInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    editInput.blur(); // Trigger save
-  }
-  if (e.key === "Escape") {
-    render(); // Discard changes
-  }
-});
-```
-
-**Edit Function:**
-
-```javascript
-function editTodo(id, newText) {
-  if (newText === "") {
-    deleteTodo(id); // Delete if empty
-  } else {
-    state.todos = state.todos.map((todo) =>
-      todo.id === id ? { ...todo, text: newText } : todo
-    );
-    saveState();
-    render();
-  }
+```css
+:root {
+  --bg-color: #f4f7f6;
+  --container-bg: #ffffff;
+  --text-color: rgb(75, 75, 75);
+  --text-light: #888888;
+  --text-empty: #aaa;
+  --input-border: #ddd;
+  --hover-bg: #f9f9f9;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --pending-border: #3498db;
+  --completed-border: #5cb85c;
+  --delete-hover: #e74c3c;
+  --dragging-bg: #cceeff;
 }
 ```
 
-### 🔄 Drag & Drop System
+**Dark Mode:**
 
-**Drag Start:**
-
-```javascript
-todoDiv.addEventListener("dragstart", (e) => {
-  e.target.classList.add("dragging");
-  e.dataTransfer.setData("text/plain", todo.id);
-});
-```
-
-**Drag Over & Drop:**
-
-```javascript
-todosContainer.addEventListener("dragover", (e) => {
-  e.preventDefault(); // Allow dropping
-});
-
-todosContainer.addEventListener("drop", handleDrop);
-
-function handleDrop(e) {
-  e.preventDefault();
-  const draggedId = e.dataTransfer.getData("text/plain");
-  const afterElement = getDragAfterElement(todosContainer, e.clientY);
-  const afterId = afterElement ? afterElement.dataset.id : null;
-  reorderTodos(draggedId, afterId);
+```css
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --container-bg: #2b2b2b;
+  --text-color: #e0e0e0;
+  --text-light: #a0a0a0;
+  --text-empty: #777;
+  --input-border: #444;
+  --hover-bg: #333;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --dragging-bg: #00334d;
 }
 ```
 
-**Position Detection:**
+### 🔘 Toggle Button Implementation
 
-```javascript
-function getDragAfterElement(container, y) {
-  const draggableElements = [
-    ...container.querySelectorAll(".todo:not(.dragging)"),
-  ];
+**HTML:**
 
-  return draggableElements.reduce(
-    (closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
-      if (offset < 0 && offset > closest.offset) {
-        return { offset: offset, element: child };
-      } else {
-        return closest;
-      }
-    },
-    { offset: Number.NEGATIVE_INFINITY }
-  ).element;
-}
-```
-
-**Reorder Function:**
-
-```javascript
-function reorderTodos(draggedId, afterId) {
-  const draggedTodo = state.todos.find((todo) => todo.id === draggedId);
-  state.todos = state.todos.filter((todo) => todo.id !== draggedId);
-
-  if (afterId === null) {
-    state.todos.push(draggedTodo); // Add to end
-  } else {
-    const targetIndex = state.todos.findIndex((todo) => todo.id === afterId);
-    state.todos.splice(targetIndex, 0, draggedTodo); // Insert at position
-  }
-
-  saveState();
-  render();
-}
-```
-
-### 📭 Empty State Handling
-
-**Empty State Render:**
-
-```javascript
-if (filteredTodos.length === 0) {
-  todosContainer.innerHTML = `<span class="no-todos">No tasks ${
-    state.filter === "all" ? "" : state.filter
-  }</span>`;
-} else {
-  // Render todos
-}
+```html
+<button
+  class="theme-toggle"
+  id="theme-toggle-btn"
+  aria-label="Toggle theme"
+></button>
 ```
 
 **Styling:**
 
 ```css
-.todos {
-  margin-top: 1.5em;
-  min-height: 50px; /* Prevent layout shift */
+.theme-toggle {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: color 0.3s ease;
 }
 
-.no-todos {
-  display: block;
-  text-align: center;
-  color: #aaa;
-  margin-top: 1em;
+.theme-toggle:hover {
+  color: var(--pending-border);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
 }
 ```
 
-### 🎭 Dual-Click Behavior
+### 💻 JavaScript Implementation
 
-**Single vs Double Click:**
+**State Management:**
 
 ```javascript
-let clickTimer = null;
+let state = {
+  todos: [],
+  filter: "all",
+  theme: "light", // NEW in v3.1
+};
+```
 
-textEl.addEventListener("click", () => {
-  if (todoDiv.classList.contains("editing")) return;
+**Theme Toggle:**
 
-  clearTimeout(clickTimer);
-  clickTimer = setTimeout(() => {
-    toggleTodo(todo.id); // Single click after 200ms
-  }, 200);
-});
-
-textEl.addEventListener("dblclick", (e) => {
-  clearTimeout(clickTimer); // Cancel single click
-  // Enter edit mode
+```javascript
+themeToggleBtn.addEventListener("click", () => {
+  state.theme = state.theme === "light" ? "dark" : "light";
+  saveTheme();
+  applyTheme();
 });
 ```
 
-**Benefits:**
+**Apply Theme:**
 
-- Single-click to toggle completion
-- Double-click to edit text
-- No accidental edits
-- Clear user intention
+```javascript
+function applyTheme() {
+  if (state.theme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggleBtn.innerHTML = sunIcon;
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggleBtn.innerHTML = moonIcon;
+  }
+}
+```
+
+**Save & Load:**
+
+```javascript
+function saveTheme() {
+  localStorage.setItem("theme", state.theme);
+}
+
+function loadState() {
+  const savedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
+  state.todos = savedTodos;
+  const savedTheme = localStorage.getItem("theme") || "light";
+  state.theme = savedTheme;
+}
+```
+
+### 🎨 CSS Variables in Action
+
+**All Elements Use Variables:**
+
+```css
+body {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  background-color: var(--container-bg);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: background-color 0.3s ease;
+}
+
+input {
+  border: 1px solid var(--input-border);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.todo {
+  border-left: 4px solid var(--pending-border);
+  color: var(--text-color);
+}
+```
+
+### 📱 Icon System
+
+**Sun Icon (Light Mode):**
+
+```javascript
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" 
+  width="24" height="24" viewBox="0 0 24 24" 
+  fill="none" stroke-width="2">
+  <!-- Sun rays animation -->
+</svg>`;
+```
+
+**Moon Icon (Dark Mode):**
+
+```javascript
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" 
+  width="24" height="24" viewBox="0 0 24 24" 
+  fill="none" stroke-width="2">
+  <!-- Moon crescent -->
+</svg>`;
+```
 
 ---
 
 ## 📦 File Structure
 
 ```
-todo-app-v3/
-├── index.html       # Main HTML (same as v2.1)
-├── main.js          # Enhanced with edit & drag-drop
-├── style.css        # New styling for editing & dragging
+todo-app-v3-1/
+├── index.html       # HTML with theme toggle button
+├── main.js          # Enhanced with theme management
+├── style.css        # CSS variables + theme styles
 └── README.md        # This documentation
 ```
 
 ### File Breakdown
 
-| File           | Size   | Purpose                        |
-| -------------- | ------ | ------------------------------ |
-| **index.html** | 1.1 KB | HTML structure (unchanged)     |
-| **main.js**    | 6.5 KB | Edit + drag-drop functionality |
-| **style.css**  | 2.4 KB | Enhanced styling               |
+| File           | Size   | Purpose                |
+| -------------- | ------ | ---------------------- |
+| **index.html** | 1.2 KB | HTML + theme button    |
+| **main.js**    | 8.0 KB | All v3.0 + theme logic |
+| **style.css**  | 3.9 KB | Variables + themes     |
 
 ---
 
@@ -315,12 +320,13 @@ todo-app-v3/
 4. **Start Managing Tasks**
    - Type task and press Enter to add
    - Click task text to mark complete
-   - **Double-click** task to edit text
-   - Press Enter or click away to save edit
+   - Double-click task to edit text
+   - Press Enter or click away to save
    - Press Escape to cancel edit
-   - **Drag tasks** to reorder them
+   - Drag tasks to reorder them
    - Click trash icon to delete
-   - Use filters to view specific tasks
+   - **Click sun/moon button to toggle theme!**
+   - Theme preference saves automatically
 
 ### Browser Requirements
 
@@ -332,302 +338,161 @@ todo-app-v3/
 
 ---
 
-## ✏️ Editing Feature
+## 🌙 Theme Features
 
-### How to Edit
+### Dark Mode Benefits
 
-1. **Double-Click Task Text**
-2. **Edit Input Appears**
-3. **Modify Task Text**
-4. **Press Enter or Click Away to Save**
-5. **Press Escape to Cancel**
+**Eye Comfort:**
 
-### Edit Behavior
+- Reduces eye strain in low-light environments
+- Lower blue light emission
+- Professional appearance
 
-**Valid Save:**
+**Battery Life:**
 
-- User double-clicks task
-- Edit input appears
-- User modifies text
-- User presses Enter or clicks away
-- New text saves to localStorage
-- UI updates with new text
+- Mobile devices use less battery with dark backgrounds
+- OLED screens benefit from dark pixels
+- Energy-efficient display
 
-**Empty Text on Save:**
+**Visual Appeal:**
 
-- User clears the input field
-- User presses Enter or clicks away
-- Task automatically deleted
-- UI re-renders without task
+- Modern, trendy appearance
+- Professional aesthetic
+- Better contrast for text
 
-**Cancel Edit:**
+### Light Mode Benefits
 
-- User presses Escape key
-- Edit mode exits
-- Original text restored
-- No changes saved
+**Day Usage:**
 
-**Read-Only Completed:**
+- Better for bright environments
+- Natural appearance
+- Familiar to most users
 
-- Cannot edit completed tasks
-- Double-click has no effect
-- Prevents accidental edits
-- Clear task state indicator
+**Accessibility:**
 
-### CSS Styling
+- Higher contrast ratios
+- Better for users with light sensitivity
+- Standard default
+
+### Smooth Transitions
+
+**0.3s Ease Transition:**
 
 ```css
-.todo.editing span:first-child {
-  display: none; /* Hide original text */
-}
+transition: background-color 0.3s ease, color 0.3s ease;
+```
 
-.edit-input {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2em;
-  color: rgb(75, 75, 75);
-  padding: 0;
-  border: none;
-  width: 100%;
-  margin: -5px 0;
-}
+**Smooth Experience:**
 
-.edit-input:focus {
-  outline: none;
-  box-shadow: none;
-  border-bottom: 2px solid #3498db;
+- Colors fade gradually
+- No jarring changes
+- Professional feel
+- Eye-friendly
+
+---
+
+## 💾 LocalStorage Management
+
+**Separate Storage Keys:**
+
+```javascript
+// Todos saved separately
+localStorage.setItem("todos", JSON.stringify(state.todos));
+
+// Theme saved separately
+localStorage.setItem("theme", state.theme);
+```
+
+**Auto-Load on Startup:**
+
+```javascript
+document.addEventListener("DOMContentLoaded", () => {
+  loadState(); // Load todos + theme
+  applyTheme(); // Apply saved theme
+  setupEventListeners();
+  render();
+});
+```
+
+**Data Structure:**
+
+```javascript
+{
+  "todos": "[{...}, {...}]",  // JSON array
+  "theme": "dark"             // "light" or "dark"
 }
 ```
 
 ---
 
-## 🔄 Drag & Drop Feature
+## 🎯 App Initialization
 
-### How to Reorder
+### Startup Sequence
 
-1. **Click and Hold a Task**
-2. **Drag to New Position**
-3. **Release to Drop**
-4. **Task Reorders in Real-Time**
-5. **Order Saves to localStorage**
-
-### Drag Behavior
-
-**Valid Drop:**
-
-- Hover over todo container
-- Position indicator shows insertion point
-- Release to place task
-- Array reordered in state
-- localStorage updated
-- UI re-renders
-
-**Drop Zones:**
-
-- Before any task: Insert at that position
-- After all tasks: Add to end
-- Between tasks: Insert in between
-- Entire container is droppable
-
-### Visual Feedback
-
-**Dragging State:**
-
-```css
-.todo.dragging {
-  opacity: 0.5;
-  background-color: #cceeff; /* Light blue */
-}
+```
+1. Page loads
+2. DOMContentLoaded event fires
+3. loadState() - restore todos + theme
+4. applyTheme() - apply saved theme to DOM
+5. setupEventListeners() - attach all listeners
+6. render() - display initial UI with theme
+7. App ready for interaction
 ```
 
-**Drag End:**
+### Initialization Code
 
 ```javascript
-todoDiv.addEventListener("dragend", (e) => {
-  e.target.classList.remove("dragging");
+document.addEventListener("DOMContentLoaded", () => {
+  loadState(); // Step 3
+  applyTheme(); // Step 4
+  setupEventListeners(); // Step 5
+  render(); // Step 6
 });
 ```
 
 ---
 
-## 📭 Empty State
+## 🎨 CSS Variable Organization
 
-### Display Conditions
+### Variable Categories
 
-**All Filter Empty:**
+**Colors:**
 
-```
-"No tasks"
-```
+- `--bg-color` - Page background
+- `--container-bg` - Todo container
+- `--text-color` - Main text
+- `--text-light` - Secondary text
+- `--text-empty` - Empty state text
 
-**Active Filter Empty:**
+**Borders & Effects:**
 
-```
-"No tasks active"
-```
-
-**Completed Filter Empty:**
-
-```
-"No tasks completed"
-```
-
-### Styling
-
-```css
-.no-todos {
-  display: block;
-  text-align: center;
-  color: #aaa;
-  margin-top: 1em;
-}
-```
+- `--input-border` - Input field border
+- `--hover-bg` - Hover background
+- `--shadow-color` - Box shadows
+- `--pending-border` - Pending todo border
+- `--completed-border` - Completed todo border
+- `--delete-hover` - Delete button hover
+- `--dragging-bg` - Dragging visual
 
 ---
 
-## 🎯 Application Flow
+## 🤝 Version Comparison
 
-### Task Lifecycle
-
-**Create → Read → Update → Delete (CRUD)**
-
-```
-Create: addTodo(text)
-Read: render(), getFilteredTodos()
-Update: editTodo(id, newText), toggleTodo(id), reorderTodos()
-Delete: deleteTodo(id)
-```
-
-### Edit Workflow
-
-```
-Double-Click → Edit Mode → Input Focus
-                    ↓
-            User Types New Text
-                    ↓
-         Enter/Blur → Save → Render
-         Escape → Discard → Render
-```
-
-### Reorder Workflow
-
-```
-Drag Start → Add Class → Show Visual
-                ↓
-      Mouse Move → Get Position
-                ↓
-      Drag End → Calculate Order
-                ↓
-      Drop → Update Array → Save → Render
-```
-
----
-
-## 💾 Enhanced State
-
-**State Structure:**
-
-```javascript
-{
-  todos: [
-    {
-      id: "1699516896000",
-      text: "Buy groceries",
-      completed: false
-    },
-    {
-      id: "1699516910000",
-      text: "Finish project",
-      completed: true
-    }
-  ],
-  filter: "all"
-}
-```
-
-**Order Preserved:**
-
-- Array order reflects display order
-- Drag-drop changes array order
-- Render respects array order
-- Order persists on reload
-
----
-
-## 🎨 CSS Enhancements
-
-### New Classes
-
-| Class         | Purpose             |
-| ------------- | ------------------- |
-| `.editing`    | Todo in edit mode   |
-| `.dragging`   | Todo being dragged  |
-| `.no-todos`   | Empty state message |
-| `.edit-input` | Edit input field    |
-
-### Enhanced Styling
-
-```css
-.todo.dragging {
-  opacity: 0.5;
-  background-color: #cceeff;
-}
-
-.todo span:first-child {
-  word-break: break-word; /* Long text handling */
-  padding-right: 10px;
-}
-
-.delete {
-  color: #888888; /* Changed from #ee4b2b */
-}
-```
-
----
-
-## 🤝 Version Evolution
-
-| Feature               | v2.1 | v3.0 |
+| Feature               | v3.0 | v3.1 |
 | --------------------- | ---- | ---- |
 | **Add Tasks**         | ✅   | ✅   |
 | **Mark Complete**     | ✅   | ✅   |
 | **Delete Tasks**      | ✅   | ✅   |
 | **Filter Tasks**      | ✅   | ✅   |
+| **Edit Inline**       | ✅   | ✅   |
+| **Drag & Drop**       | ✅   | ✅   |
+| **Empty State**       | ✅   | ✅   |
 | **LocalStorage**      | ✅   | ✅   |
-| **State Management**  | ✅   | ✅   |
-| **✏️ Edit Tasks**     | ❌   | ✅   |
-| **🔄 Drag & Drop**    | ❌   | ✅   |
-| **📭 Empty State**    | ❌   | ✅   |
-| **Dual-Click**        | ❌   | ✅   |
-| **Keyboard Controls** | ❌   | ✅   |
-| **Task Reordering**   | ❌   | ✅   |
-
----
-
-## 📚 Code Quality
-
-### JavaScript Patterns
-
-**Event Debouncing:**
-
-```javascript
-let clickTimer = null;
-// Prevents double-click while handling single-click
-```
-
-**Immutable State Updates:**
-
-```javascript
-state.todos = state.todos.map((todo) =>
-  todo.id === id ? { ...todo, text: newText } : todo
-);
-```
-
-**DOM Event Delegation:**
-
-```javascript
-todosContainer.addEventListener("drop", handleDrop);
-// Single listener for all todos
-```
+| **🌙 Dark Mode**      | ❌   | ✅   |
+| **CSS Variables**     | ❌   | ✅   |
+| **Theme Toggle**      | ❌   | ✅   |
+| **Theme Persistence** | ❌   | ✅   |
+| **Sun/Moon Icons**    | ❌   | ✅   |
 
 ---
 
@@ -647,71 +512,73 @@ todosContainer.addEventListener("drop", handleDrop);
 ## 📚 Technical Stack
 
 - **Markup**: HTML5 (semantic, accessible)
-- **Styling**: CSS3 (animations, transitions, flexbox)
-- **Logic**: Vanilla JavaScript (functional, event-driven)
+- **Styling**: CSS3 (variables, transitions, flexbox)
+- **Logic**: Vanilla JavaScript (state-based)
 - **Storage**: LocalStorage API (persistent)
 - **Fonts**: Google Fonts (Roboto)
-- **Architecture**: State management with render function
+- **Icons**: SVG (scalable)
+- **Theming**: CSS custom properties
 
 ---
 
-## 💬 Key Concepts Introduced
+## 💬 Tips & Tricks
 
-### Dual-Click Handling
+### For Best Experience
 
-```javascript
-// Single-click: complete task (with 200ms delay)
-// Double-click: enter edit mode (cancels single-click timer)
-// Achieved with setTimeout and clearTimeout
-```
+- Try both light and dark modes
+- Toggle theme while viewing tasks
+- Notice smooth color transitions
+- Check icon changes with theme
+- Dark mode reduces eye strain
+- Light mode for bright environments
 
-### Drag & Drop API
+### Productivity Tips
 
-```javascript
-// dragstart: Set data, add visual feedback
-// dragover: Prevent default to allow drop
-// drop: Get data, calculate position, reorder
-// dragend: Remove visual feedback
-```
+- Use dark mode in low-light (evening/night)
+- Use light mode in bright environments
+- Theme preference persists across sessions
+- Toggle anytime without losing data
+- Experiment with your preference
 
-### Positional Math
+### Development Tips
 
-```javascript
-// Calculate drop position based on mouse Y coordinate
-// Compare with element center to determine insert position
-// Support insertion at any point in the list
-```
+- Edit CSS variables to customize colors
+- Add more color variables as needed
+- Extend to 3+ theme options
+- Create seasonal themes
+- Modify transitions for different effects
 
 ---
 
 ## 🚨 Troubleshooting
 
-### Editing Not Working
+### Theme Not Saving
 
-- Verify browser supports contenteditable or input elements
-- Check double-click is recognized
-- Ensure focus is on edit input
+- Check localStorage is enabled
+- Verify theme key in DevTools
+- Test in non-private/incognito mode
+- Clear cache and reload
+
+### Theme Not Applying
+
+- Check body class toggle
+- Verify CSS variables defined
 - Test in different browser
+- Check for CSS conflicts
 
-### Drag & Drop Not Working
+### Icons Not Showing
 
-- Check browser supports Drag & Drop API
-- Verify dragover preventDefault is called
-- Test with different browsers
-- Check for JavaScript errors in console
+- Verify SVG syntax is correct
+- Check `stroke` property
+- Test SVG inline vs external
+- Verify `fill="none"` attribute
 
-### Order Not Saving
+### Transitions Not Smooth
 
-- Verify localStorage is enabled
-- Check reorderTodos function called
-- Ensure saveState runs after reorder
-- Test localStorage with DevTools
-
-### Empty State Not Showing
-
-- Check filteredTodos.length calculation
-- Verify render() called after filter change
-- Test with no tasks or all completed
+- Check transition duration
+- Verify ease timing function
+- Test in different browser
+- Check GPU acceleration enabled
 
 ---
 
@@ -719,24 +586,22 @@ todosContainer.addEventListener("drop", handleDrop);
 
 **Possible Features:**
 
-- Task categories/tags
-- Due dates and reminders
-- Task priorities
-- Subtasks
-- Time tracking
-- Export to CSV/JSON
-- Dark theme
-- Keyboard shortcuts
-- Undo/redo history
+- Multiple theme options (blue, green, purple, etc.)
+- Scheduled themes (auto dark at sunset)
+- Theme customization UI
+- Export theme settings
+- Community themes
+- Accessibility theme (high contrast)
+- Seasonal themes
 
 **Architecture Ready For:**
 
-- More complex state
-- Advanced filtering
-- Task statistics
-- User accounts
-- Cloud sync
-- Real-time collaboration
+- Theme switching library
+- Advanced state management
+- More complex theming logic
+- User preferences panel
+- Theme marketplace
+- Real-time sync across devices
 
 ---
 
@@ -755,4 +620,4 @@ todosContainer.addEventListener("drop", handleDrop);
 
 **Organize Your Tasks, Simplify Your Life** ✅
 
-_Edit, reorder, and organize your tasks with intuitive interactions!_
+_Beautiful task management with light and dark themes!_
