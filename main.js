@@ -1,17 +1,22 @@
-// ToDo WebApp 3.0 - Added Edit & Drag/Drop
+// ToDo WebApp v3.1 - Added Theme Toggle
 
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const todosContainer = document.querySelector(".todos");
 const filterBtns = document.querySelectorAll(".filter-btn");
+const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 
 let state = {
   todos: [],
   filter: "all",
+  theme: "light",
 };
 
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 document.addEventListener("DOMContentLoaded", () => {
   loadState();
+  applyTheme();
   setupEventListeners();
   render();
 });
@@ -33,9 +38,14 @@ function setupEventListeners() {
   });
 
   todosContainer.addEventListener("dragover", (e) => {
-    e.preventDefault(); // Allow dropping
+    e.preventDefault();
   });
   todosContainer.addEventListener("drop", handleDrop);
+  themeToggleBtn.addEventListener("click", () => {
+    state.theme = state.theme === "light" ? "dark" : "light";
+    saveTheme();
+    applyTheme();
+  });
 }
 
 function render() {
@@ -176,7 +186,7 @@ function addTodo(text) {
     completed: false,
   };
   state.todos.push(newTodo);
-  saveState();
+  saveTodos();
   render();
 }
 
@@ -184,13 +194,13 @@ function toggleTodo(id) {
   state.todos = state.todos.map((todo) =>
     todo.id === id ? { ...todo, completed: !todo.completed } : todo
   );
-  saveState();
+  saveTodos();
   render();
 }
 
 function deleteTodo(id) {
   state.todos = state.todos.filter((todo) => todo.id !== id);
-  saveState();
+  saveTodos();
   render();
 }
 
@@ -206,7 +216,7 @@ function editTodo(id, newText) {
     state.todos = state.todos.map((todo) =>
       todo.id === id ? { ...todo, text: newText } : todo
     );
-    saveState();
+    saveTodos();
     render();
   }
 }
@@ -220,15 +230,31 @@ function reorderTodos(draggedId, afterId) {
     const targetIndex = state.todos.findIndex((todo) => todo.id === afterId);
     state.todos.splice(targetIndex, 0, draggedTodo);
   }
-  saveState();
+  saveTodos();
   render();
 }
 
-function saveState() {
+function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(state.todos));
 }
 
+function saveTheme() {
+  localStorage.setItem("theme", state.theme);
+}
+
 function loadState() {
-  const savedTasks = JSON.parse(localStorage.getItem("todos") || "[]");
-  state.todos = savedTasks;
+  const savedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
+  state.todos = savedTodos;
+  const savedTheme = localStorage.getItem("theme") || "light";
+  state.theme = savedTheme;
+}
+
+function applyTheme() {
+  if (state.theme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggleBtn.innerHTML = sunIcon;
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeToggleBtn.innerHTML = moonIcon;
+  }
 }

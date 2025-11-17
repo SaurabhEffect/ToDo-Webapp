@@ -1,4 +1,35 @@
-/* ToDo WebApp 3.0 - Added Edit & Drag/Drop */
+/* ToDo WebApp v3.1 - Added Theme Toggle */
+
+:root {
+  /* Light Mode Colors */
+  --bg-color: #f4f7f6;
+  --container-bg: #ffffff;
+  --text-color: rgb(75, 75, 75);
+  --text-light: #888888;
+  --text-empty: #aaa;
+  --input-border: #ddd;
+  --hover-bg: #f9f9f9;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --pending-border: #3498db;
+  --pending-shadow: rgba(52, 152, 219, 0.4);
+  --completed-border: #5cb85c;
+  --delete-hover: #e74c3c;
+  --dragging-bg: #cceeff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  /* Dark Mode colors */
+  --bg-color: #1a1a1a;
+  --container-bg: #2b2b2b;
+  --text-color: #e0e0e0;
+  --text-light: #a0a0a0;
+  --text-empty: #777;
+  --input-border: #444;
+  --hover-bg: #333;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --dragging-bg: #00334d;
+}
 
 * {
   margin: 0;
@@ -7,36 +38,64 @@
 }
 
 body {
-  background-color: #f4f7f6;
+  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 .container {
   width: 400px;
-  background-color: #fff;
+  background-color: var(--container-bg);
   padding: 2em;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--pending-border);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
 }
 
 input {
   width: 100%;
   padding: 10px;
   display: block;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.3s ease, color 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  border-color: #3498db; /* Blue */
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+  border-color: var(--pending-border);
+  box-shadow: 0 0 5px var(--pending-shadow);
 }
 
 .filters {
@@ -47,18 +106,18 @@ input:focus {
 }
 
 .filter-btn {
-  color: #888;
+  color: var(--text-light);
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .filter-btn:hover {
-  color: #555;
+  color: var(--text-color);
 }
 
 .filter-btn.active {
-  color: #3498db;
+  color: var(--pending-border);
 }
 
 .todos {
@@ -69,14 +128,14 @@ input:focus {
 .no-todos {
   display: block;
   text-align: center;
-  color: #aaa;
+  color: var(--text-empty);
   margin-top: 1em;
 }
 
 .todo {
-  border-left: 4px solid #3498db;
+  border-left: 4px solid var(--pending-border);
   padding: 5px;
-  color: rgb(75, 75, 75);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +145,7 @@ input:focus {
 }
 
 .todo:hover {
-  background-color: #f9f9f9;
+  background-color: var(--hover-bg);
 }
 
 .todo span:first-child {
@@ -96,14 +155,14 @@ input:focus {
 }
 
 .todo.completed {
-  border-left-color: #5cb85c;
+  border-left-color: var(--completed-border);
   text-decoration: line-through;
   opacity: 0.6;
 }
 
 .todo.dragging {
   opacity: 0.5;
-  background-color: #cceeff;
+  background-color: var(--dragging-bg);
 }
 
 .todo.editing span:first-child {
@@ -113,21 +172,22 @@ input:focus {
 .edit-input {
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
-  color: rgb(75, 75, 75);
+  color: var(--text-color);
   padding: 0;
   border: none;
   width: 100%;
   margin: -5px 0;
+  background: none;
 }
 
 .edit-input:focus {
   outline: none;
   box-shadow: none;
-  border-bottom: 2px solid #3498db;
+  border-bottom: 2px solid var(--pending-border);
 }
 
 .delete {
-  color: #888888;
+  color: var(--text-light);
   cursor: pointer;
   transition: color 0.2s ease;
   padding: 4px;
@@ -135,7 +195,7 @@ input:focus {
 }
 
 .delete:hover {
-  color: #e74c3c;
+  color: var(--delete-hover);
 }
 
 .delete svg {
