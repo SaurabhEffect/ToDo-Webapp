@@ -2,35 +2,151 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo WebApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>ToDo WebApp</title>
   </head>
   <body>
     <div class="container">
-      <button
-        class="theme-toggle"
-        id="theme-toggle-btn"
-        aria-label="Toggle theme"
-      ></button>
-      <form>
-        <input type="text" placeholder="Enter a Task" />
+      <div class="header">
+        <h1>My Tasks</h1>
+        <button
+          class="theme-toggle"
+          id="theme-toggle-btn"
+          aria-label="Toggle theme"
+        ></button>
+      </div>
+
+      <form class="task-form" id="task-form">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="task-input"
+            placeholder="Add a new task..."
+            autocomplete="off"
+          />
+          <button type="submit" class="btn-add" aria-label="Add task">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </div>
       </form>
 
-      <div class="filters">
-        <span class="filter-btn active" data-filter="all">All</span>
-        <span class="filter-btn" data-filter="active">Active</span>
-        <span class="filter-btn" data-filter="completed">Completed</span>
+      <div class="action-buttons">
+        <button class="btn-secondary" id="undo-btn" disabled>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 7v6h6"></path>
+            <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"></path>
+          </svg>
+          Undo
+        </button>
+        <button class="btn-secondary" id="clear-completed-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            ></path>
+          </svg>
+          Clear Completed
+        </button>
       </div>
-      <div class="todos"></div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="favorites">Favorites</button>
+      </div>
+
+      <div class="todos" id="todos-container"></div>
+      <div class="celebration hidden" id="celebration">
+        <div class="celebration-content">
+          <div class="celebration-icon">🎉</div>
+          <h2>All tasks done — great job!</h2>
+          <p>You've completed everything on your list!</p>
+        </div>
+      </div>
     </div>
+
+    <div class="modal hidden" id="tag-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Add Tags</h3>
+          <button class="modal-close" id="modal-close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input
+            type="text"
+            id="tag-input"
+            placeholder="Enter tag name..."
+            autocomplete="off"
+          />
+          <div class="tag-suggestions" id="tag-suggestions"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="date-picker hidden" id="date-picker">
+      <input type="date" id="date-input" />
+      <div class="date-actions">
+        <button class="btn-small" id="date-clear">Clear</button>
+        <button class="btn-small btn-primary" id="date-save">Save</button>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
