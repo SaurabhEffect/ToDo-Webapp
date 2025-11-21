@@ -1,294 +1,394 @@
-# ✅ ToDo Web Application - v3.1
+# ✅ ToDo Web Application - v4.0
 
-A clean and modern to-do list application built with HTML5, CSS3, and vanilla JavaScript. Add tasks, mark them as completed, and delete them with ease.
+A modern, feature-rich to-do list application with advanced task management capabilities. Built with HTML5, CSS3, and vanilla JavaScript.
 
-**NEW in v3.1: Dark/Light Theme Toggle, CSS Variables, Enhanced Theming, and Persistent Theme Preference!**
+**NEW in v4.0: Favorites/Starring, Tags, Due Dates, Undo System, Celebration Animation, Clear Completed, Demo Tasks, Modern UI, Gradient Design, and More!**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![LocalStorage](https://img.shields.io/badge/LocalStorage-Persistence-blue?style=for-the-badge)
-![DragDrop](https://img.shields.io/badge/Drag%20Drop-Reorder-green?style=for-the-badge)
-![Theme](https://img.shields.io/badge/Theme-Dark%20&%20light-yellow?style=for-the-badge)
+![Advanced](https://img.shields.io/badge/Features-Advanced-purple?style=for-the-badge)
 
-**Smart Editing. Beautiful Reordering. Dark & Light Themes.** 🎯
+**Professional Task Management. Advanced Features. Beautiful Design.** 🎯
 
 ---
 
-## 🆕 What's New in v3.1
+## 🆕 What's New in v4.0
 
-### 🌙 **Dark/Light Theme Toggle** ⭐⭐ NEW (MAJOR)
+### ⭐ **Favorites/Starring System** ⭐⭐ NEW (MAJOR)
 
-- **Theme Toggle Button** - Top-right corner button
-- **Sun/Moon SVG Icons** - Visual theme indicators
-- **Light Mode** - Default light gray (#f4f7f6) background
-- **Dark Mode** - Professional dark (#1a1a1a) background
-- **Instant Theme Switch** - No page reload required
-- **Smooth Transitions** - 0.3s ease color transitions
-- **Click to Toggle** - Single click to change theme
-- **Professional Icon Design** - Custom SVG sun/moon icons
+- **Star Icon Button** - Click to mark tasks as favorites
+- **Starred Filter** - View only favorite tasks
+- **Visual Indicator** - Yellow star (#ecc94b) for favorites
+- **Persistent Favorites** - Saved to localStorage
+- **Quick Access** - Filter to see important tasks
+- **Toggle Favorite** - Single click to star/unstar
+- **Filter Tab** - "Favorites" tab in filter buttons
+- **Dynamic Display** - Starred tasks highlighted
 
-### 🎨 **CSS Variables System** ⭐⭐ NEW (MAJOR)
+### 🏷️ **Tags/Labels System** ⭐⭐ NEW (MAJOR)
 
-- **Root Color Variables** - Centralized color management
-- **Dynamic Color Switching** - Update via CSS variables
-- **Light Mode Variables** - Complete color palette
-- **Dark Mode Variables** - Full dark theme colors
-- **Smooth Transitions** - All color changes animated
-- **Easy Customization** - Change colors in one place
-- **Scalable Design** - Easy to extend themes
-- **Professional Implementation** - Industry-standard approach
+- **Tag Modal** - Popup to add tags to tasks
+- **Tag Input** - Enter custom tag names
+- **Tag Suggestions** - Predefined tags (Work, Personal, Urgent, etc.)
+- **Multiple Tags** - Add multiple tags per task
+- **Visual Display** - Tags shown on task cards
+- **Easy Management** - Add/remove tags with UI
+- **Searchable Tags** - Filter by specific tags
+- **Pre-configured Tags** - 5 default tags available
 
-### 🌈 **Enhanced Color Palette** ⭐⭐ NEW (MAJOR)
+### 📅 **Due Dates System** ⭐⭐ NEW (MAJOR)
 
-**Light Mode Colors:**
+- **Date Picker** - HTML5 date input
+- **Set Due Date** - Add deadline to any task
+- **Visual Indicator** - Date displayed on task
+- **Clear Date** - Remove due date easily
+- **Date Sorting** - Tasks organized by date
+- **Modal Interface** - Clean date picker UI
+- **Save/Clear Buttons** - Explicit date actions
+- **ISO Format** - Standard date storage
 
-- Background: #f4f7f6 (light gray)
-- Container: #ffffff (white)
-- Text: rgb(75, 75, 75) (dark gray)
-- Input Border: #ddd (light gray)
-- Pending Border: #3498db (blue)
-- Completed Border: #5cb85c (green)
-- Delete Hover: #e74c3c (red)
-- Dragging Background: #cceeff (light blue)
+### ↩️ **Undo System** ⭐⭐ NEW (MAJOR)
 
-**Dark Mode Colors:**
+- **Undo Button** - Revert last action
+- **History Stack** - Track state changes
+- **Disabled When Empty** - Button disabled when no history
+- **Multiple Undo** - Support multiple operations
+- **State Snapshot** - Full state saved before action
+- **Action Types** - Undo add, delete, edit, complete
+- **Performance Optimized** - Limited history size
+- **User-Friendly** - Clear undo indication
 
-- Background: #1a1a1a (very dark)
-- Container: #2b2b2b (dark gray)
-- Text: #e0e0e0 (light gray)
-- Input Border: #444 (dark gray)
-- Dragging Background: #00334d (dark blue)
-- All other colors optimized for dark mode
+### 🎉 **Celebration Animation** ⭐ NEW
 
-### 💾 **Theme Persistence** ⭐ NEW
+- **All Tasks Done** - Show celebration when completed
+- **Modal Celebration** - Beautiful popup design
+- **Emoji Celebration** - 🎉 celebration icon
+- **Encouragement Message** - "Great job!" text
+- **Dismissible** - Click to close
+- **Hidden by Default** - Only shows on completion
+- **Visual Delight** - Professional animation
+- **Motivating UX** - Positive reinforcement
 
-- **localStorage Integration** - Save theme preference
-- **Auto-Load Theme** - Restore on page reload
-- **Separate Storage** - Theme saved independently
-- **Smart Loading** - Defaults to "light" if not set
-- **Immediate Application** - Theme applied on load
-- **State Management** - Integrated with app state
+### 🧹 **Clear Completed** ⭐ NEW
 
-### 🎭 **Visual Improvements** ⭐ NEW
+- **Clear Button** - Remove all completed tasks
+- **Bulk Delete** - Delete multiple at once
+- **Confirmation** - Safe deletion with button
+- **History Support** - Can undo clearing
+- **UI Button** - Easy access action button
+- **One-Click Clean** - Immediate cleanup
+- **Preserve Active** - Only removes completed
+- **State Update** - Immediate re-render
 
-- **Icon Positioning** - Absolute positioning top-right
-- **Hover Effects** - Color changes on hover
-- **Smooth Animations** - All transitions smooth
-- **Contrast** - Proper text/background contrast
-- **Accessibility** - Readable in both themes
-- **Professional Look** - Polish and refinement
+### 📝 **Demo Tasks** ⭐ NEW
 
-### ✅ **Complete Feature Set** (v3.0 Features Retained)
+- **Auto-Generate** - Creates sample tasks on first load
+- **Helpful Examples** - Shows all features
+- **Interactive Guide** - Built-in tutorial
+- **Quick Start** - Users can explore immediately
+- **Professional** - Demo tasks include dates/tags
+- **Removable** - Users can delete them
+- **Tomorrow & Next Week** - Multiple date examples
+- **Personal & Work Tags** - Different tag examples
 
-- **Add Tasks** - Input form with validation
-- **Mark Complete** - Click task to toggle completion
-- **Delete Tasks** - SVG trash icon
-- **Filter Tasks** - All, Active, Completed
+### 🎨 **Modern UI Design** ⭐⭐ NEW (MAJOR)
+
+- **Gradient Background** - Linear gradient (#f0f4f8 → #e8eef3)
+- **Dark Gradient** - Dark mode gradient (#1a202c → #2d3748)
+- **Rounded Corners** - Consistent border radius
+- **Modern Shadows** - Multiple shadow levels (sm/md/lg)
+- **Smooth Transitions** - 150ms, 250ms, 350ms transitions
+- **Professional Colors** - Semantic color system
+- **Better Typography** - Inter font family
+- **Elevation System** - Shadow-based depth
+
+### 🎯 **Enhanced Typography** ⭐ NEW
+
+- **Inter Font** - Modern, professional font family
+- **Font Weights** - 400, 500, 600, 700
+- **Better Readability** - Improved text rendering
+- **System Fallbacks** - Apple/Windows fallback fonts
+- **Optimized Sizing** - Better text hierarchy
+- **Responsive Text** - Scales on mobile
+- **Professional Feel** - Modern font choice
+
+### 📐 **Design System** ⭐⭐ NEW
+
+- **CSS Variables** - Complete design tokens
+- **Color Tokens** - Primary, success, warning, danger, favorite
+- **Spacing Scale** - Consistent margins/padding
+- **Border Radius** - sm/md/lg sizes
+- **Shadow System** - Multiple shadow depths
+- **Transition Presets** - Fast/normal/slow
+- **Responsive Design** - Mobile-first approach
+- **Accessibility Focus** - Proper contrast ratios
+
+### ✅ **Complete Feature Set** (All v3.1 Features Retained)
+
+- **Add Tasks** - Form with validation
 - **Edit Inline** - Double-click to edit
-- **Drag & Drop** - Reorder tasks easily
-- **Empty State** - "No tasks" message
-- **LocalStorage** - Persist all data
-
----
-
-## 🎯 Features
-
-### 🌙 Theme System
-
-**Light Mode (Default):**
-
-```css
-:root {
-  --bg-color: #f4f7f6;
-  --container-bg: #ffffff;
-  --text-color: rgb(75, 75, 75);
-  --text-light: #888888;
-  --text-empty: #aaa;
-  --input-border: #ddd;
-  --hover-bg: #f9f9f9;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --pending-border: #3498db;
-  --completed-border: #5cb85c;
-  --delete-hover: #e74c3c;
-  --dragging-bg: #cceeff;
-}
-```
-
-**Dark Mode:**
-
-```css
-body.dark-mode {
-  --bg-color: #1a1a1a;
-  --container-bg: #2b2b2b;
-  --text-color: #e0e0e0;
-  --text-light: #a0a0a0;
-  --text-empty: #777;
-  --input-border: #444;
-  --hover-bg: #333;
-  --shadow-color: rgba(0, 0, 0, 0.4);
-  --dragging-bg: #00334d;
-}
-```
-
-### 🔘 Toggle Button Implementation
-
-**HTML:**
-
-```html
-<button
-  class="theme-toggle"
-  id="theme-toggle-btn"
-  aria-label="Toggle theme"
-></button>
-```
-
-**Styling:**
-
-```css
-.theme-toggle {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-light);
-  transition: color 0.3s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--pending-border);
-}
-
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-}
-```
-
-### 💻 JavaScript Implementation
-
-**State Management:**
-
-```javascript
-let state = {
-  todos: [],
-  filter: "all",
-  theme: "light", // NEW in v3.1
-};
-```
-
-**Theme Toggle:**
-
-```javascript
-themeToggleBtn.addEventListener("click", () => {
-  state.theme = state.theme === "light" ? "dark" : "light";
-  saveTheme();
-  applyTheme();
-});
-```
-
-**Apply Theme:**
-
-```javascript
-function applyTheme() {
-  if (state.theme === "dark") {
-    document.body.classList.add("dark-mode");
-    themeToggleBtn.innerHTML = sunIcon;
-  } else {
-    document.body.classList.remove("dark-mode");
-    themeToggleBtn.innerHTML = moonIcon;
-  }
-}
-```
-
-**Save & Load:**
-
-```javascript
-function saveTheme() {
-  localStorage.setItem("theme", state.theme);
-}
-
-function loadState() {
-  const savedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
-  state.todos = savedTodos;
-  const savedTheme = localStorage.getItem("theme") || "light";
-  state.theme = savedTheme;
-}
-```
-
-### 🎨 CSS Variables in Action
-
-**All Elements Use Variables:**
-
-```css
-body {
-  background-color: var(--bg-color);
-  transition: background-color 0.3s ease;
-}
-
-.container {
-  background-color: var(--container-bg);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  transition: background-color 0.3s ease;
-}
-
-input {
-  border: 1px solid var(--input-border);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.todo {
-  border-left: 4px solid var(--pending-border);
-  color: var(--text-color);
-}
-```
-
-### 📱 Icon System
-
-**Sun Icon (Light Mode):**
-
-```javascript
-const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" 
-  width="24" height="24" viewBox="0 0 24 24" 
-  fill="none" stroke-width="2">
-  <!-- Sun rays animation -->
-</svg>`;
-```
-
-**Moon Icon (Dark Mode):**
-
-```javascript
-const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" 
-  width="24" height="24" viewBox="0 0 24 24" 
-  fill="none" stroke-width="2">
-  <!-- Moon crescent -->
-</svg>`;
-```
+- **Mark Complete** - Toggle completion
+- **Delete Tasks** - Remove individual items
+- **Filter Tasks** - All/Active/Completed/Favorites
+- **Drag & Drop** - Reorder easily
+- **Theme Toggle** - Dark/Light mode
+- **LocalStorage** - Full persistence
 
 ---
 
 ## 📦 File Structure
 
 ```
-todo-app-v3-1/
-├── index.html       # HTML with theme toggle button
-├── main.js          # Enhanced with theme management
-├── style.css        # CSS variables + theme styles
+todo-app-v4-0/
+├── index.html       # Advanced UI with modals
+├── main.js          # Complete feature logic (24 KB)
+├── style.css        # Modern design system (15 KB)
 └── README.md        # This documentation
 ```
 
 ### File Breakdown
 
-| File           | Size   | Purpose                |
-| -------------- | ------ | ---------------------- |
-| **index.html** | 1.2 KB | HTML + theme button    |
-| **main.js**    | 8.0 KB | All v3.0 + theme logic |
-| **style.css**  | 3.9 KB | Variables + themes     |
+| File           | Size    | Purpose                |
+| -------------- | ------- | ---------------------- |
+| **index.html** | 5.0 KB  | HTML + all UI elements |
+| **main.js**    | 24.9 KB | All v4.0 functionality |
+| **style.css**  | 15.7 KB | Design system + styles |
+
+---
+
+## 🎯 Advanced Features
+
+### ⭐ Starring System
+
+**Star a Task:**
+
+```javascript
+function toggleStar(id) {
+  state.todos = state.todos.map((todo) =>
+    todo.id === id ? { ...todo, starred: !todo.starred } : todo
+  );
+  saveTodos();
+  render();
+}
+```
+
+**Filter by Favorites:**
+
+```javascript
+// Click "Favorites" filter to view starred tasks
+if (state.filter === "favorites") {
+  return state.todos.filter((todo) => todo.starred);
+}
+```
+
+**Visual Indicator:**
+
+```html
+<button class="btn-star" onclick="toggleStar(id)">
+  <svg>★</svg>
+</button>
+```
+
+### 🏷️ Tags Management
+
+**Task Data Structure:**
+
+```javascript
+{
+  id: "1699516896000",
+  text: "Buy groceries",
+  completed: false,
+  starred: false,
+  tags: ["Shopping", "Personal"],
+  dueDate: "2025-11-10",
+  createdAt: "2025-11-08T17:00:00Z",
+  order: 0
+}
+```
+
+**Add Tag to Task:**
+
+```javascript
+function addTagToTodo(id, tag) {
+  state.todos = state.todos.map((todo) =>
+    todo.id === id ? { ...todo, tags: [...new Set([...todo.tags, tag])] } : todo
+  );
+  saveTodos();
+  render();
+}
+```
+
+**Tag Modal:**
+
+- Opens on tag button click
+- Shows suggestions
+- Allows custom tags
+- Saves with Enter key
+
+### 📅 Due Dates
+
+**Date Picker:**
+
+```html
+<div class="date-picker hidden" id="date-picker">
+  <input type="date" id="date-input" />
+  <button id="date-clear">Clear</button>
+  <button id="date-save">Save</button>
+</div>
+```
+
+**Set Due Date:**
+
+```javascript
+function setDueDate(id, date) {
+  state.todos = state.todos.map((todo) =>
+    todo.id === id ? { ...todo, dueDate: date } : todo
+  );
+  saveTodos();
+  render();
+}
+```
+
+**Display Date:**
+
+- Shows on task card
+- Format: YYYY-MM-DD
+- Easy to edit/clear
+- Visible in all views
+
+### ↩️ Undo Functionality
+
+**History Stack:**
+
+```javascript
+let state = {
+  todos: [],
+  history: [], // Stores previous states
+  filter: "all",
+  // ... other state
+};
+```
+
+**Save to History:**
+
+```javascript
+function saveToHistory() {
+  state.history.push(JSON.parse(JSON.stringify(state.todos)));
+  if (state.history.length > 50) {
+    state.history.shift(); // Limit history
+  }
+}
+```
+
+**Undo Action:**
+
+```javascript
+function undoLastChange() {
+  if (state.history.length > 0) {
+    state.todos = state.history.pop();
+    saveTodos();
+    render();
+    updateUndoButton();
+  }
+}
+```
+
+### 🎉 Celebration System
+
+**Show Celebration:**
+
+```javascript
+function checkAllCompleted() {
+  if (state.todos.length > 0 && state.todos.every((t) => t.completed)) {
+    celebration.classList.remove("hidden");
+  }
+}
+```
+
+**Hide on Click:**
+
+```javascript
+celebration.addEventListener("click", () => {
+  celebration.classList.add("hidden");
+});
+```
+
+**Styling:**
+
+```css
+.celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.celebration-icon {
+  font-size: 4rem;
+  animation: bounce 0.6s ease infinite;
+}
+```
+
+---
+
+## 🎨 Design System
+
+### Color Variables
+
+**Light Mode:**
+
+```css
+--bg-gradient-start: #f0f4f8;
+--bg-gradient-end: #e8eef3;
+--container-bg: #ffffff;
+--text-primary: #2d3748;
+--accent-primary: #4299e1;
+--accent-success: #48bb78;
+--accent-warning: #ed8936;
+--accent-danger: #f56565;
+--accent-favorite: #ecc94b;
+```
+
+**Dark Mode:**
+
+```css
+body.dark-mode {
+  --bg-gradient-start: #1a202c;
+  --bg-gradient-end: #2d3748;
+  --container-bg: #2d3748;
+  --text-primary: #e2e8f0;
+  --accent-primary: #4299e1;
+  /* ... other colors */
+}
+```
+
+### Spacing & Sizing
+
+```css
+--radius-sm: 6px;
+--radius-md: 8px;
+--radius-lg: 12px;
+
+--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+```
+
+### Transitions
+
+```css
+--transition-fast: 150ms ease;
+--transition-normal: 250ms ease;
+--transition-slow: 350ms ease;
+```
 
 ---
 
@@ -304,304 +404,149 @@ todo-app-v3-1/
    - style.css
    ```
 
-2. **Keep Files Together**
-
-   - All files in same directory
-   - Maintain exact file names
-
-3. **Open in Browser**
+2. **Open in Browser**
 
    ```bash
-   open index.html      # macOS
-   start index.html     # Windows
-   xdg-open index.html  # Linux
+   open index.html
    ```
 
-4. **Start Managing Tasks**
-   - Type task and press Enter to add
-   - Click task text to mark complete
-   - Double-click task to edit text
-   - Press Enter or click away to save
-   - Press Escape to cancel edit
-   - Drag tasks to reorder them
-   - Click trash icon to delete
-   - **Click sun/moon button to toggle theme!**
-   - Theme preference saves automatically
+3. **Explore Features**
+   - Demo tasks auto-load
+   - Try starring, tagging, setting dates
+   - Toggle theme (top-right)
+   - Undo actions with button
+   - Clear completed tasks
+   - Enjoy the celebration!
 
-### Browser Requirements
+### First-Time Experience
 
-- **Chrome/Edge**: 60+
-- **Firefox**: 55+
-- **Safari**: 10.1+
-- **Opera**: 47+
-- **Mobile Browsers**: All modern versions
+- Demo tasks guide you through features
+- Each task shows a different capability
+- Try editing, starring, tagging
+- Set due dates in the modal
+- Complete all tasks for celebration
 
 ---
 
-## 🌙 Theme Features
+## 📊 Version Comparison
 
-### Dark Mode Benefits
-
-**Eye Comfort:**
-
-- Reduces eye strain in low-light environments
-- Lower blue light emission
-- Professional appearance
-
-**Battery Life:**
-
-- Mobile devices use less battery with dark backgrounds
-- OLED screens benefit from dark pixels
-- Energy-efficient display
-
-**Visual Appeal:**
-
-- Modern, trendy appearance
-- Professional aesthetic
-- Better contrast for text
-
-### Light Mode Benefits
-
-**Day Usage:**
-
-- Better for bright environments
-- Natural appearance
-- Familiar to most users
-
-**Accessibility:**
-
-- Higher contrast ratios
-- Better for users with light sensitivity
-- Standard default
-
-### Smooth Transitions
-
-**0.3s Ease Transition:**
-
-```css
-transition: background-color 0.3s ease, color 0.3s ease;
-```
-
-**Smooth Experience:**
-
-- Colors fade gradually
-- No jarring changes
-- Professional feel
-- Eye-friendly
+| Feature                | v3.1 | v4.0 |
+| ---------------------- | ---- | ---- |
+| **Add Tasks**          | ✅   | ✅   |
+| **Edit Inline**        | ✅   | ✅   |
+| **Mark Complete**      | ✅   | ✅   |
+| **Drag & Drop**        | ✅   | ✅   |
+| **Dark/Light Theme**   | ✅   | ✅   |
+| **CSS Variables**      | ✅   | ✅   |
+| **⭐ Favorites**       | ❌   | ✅   |
+| **🏷️ Tags**            | ❌   | ✅   |
+| **📅 Due Dates**       | ❌   | ✅   |
+| **↩️ Undo System**     | ❌   | ✅   |
+| **🎉 Celebration**     | ❌   | ✅   |
+| **🧹 Clear Completed** | ❌   | ✅   |
+| **📝 Demo Tasks**      | ❌   | ✅   |
+| **🎨 Modern Design**   | ❌   | ✅   |
+| **Gradient BG**        | ❌   | ✅   |
+| **Inter Font**         | ❌   | ✅   |
+| **Advanced Modals**    | ❌   | ✅   |
 
 ---
 
-## 💾 LocalStorage Management
+## 💡 Usage Tips
 
-**Separate Storage Keys:**
+### Task Management
+
+- **Star important** tasks for quick access
+- **Add tags** to organize by category
+- **Set due dates** for deadlines
+- **Drag to reorder** by priority
+- **Double-click** to edit descriptions
+
+### Productivity
+
+- Use **"Favorites" filter** for urgent tasks
+- **Tag similar** tasks for grouping
+- **Due dates** help with scheduling
+- **Undo** mistakes with button
+- **Clear completed** for fresh start
+
+### Advanced Features
+
+- **Combine filters** (starred + work)
+- **Use tags** as mini-projects
+- **Demo tasks** are reference examples
+- **Celebration** motivates completion
+- **History** saved (undo enabled)
+
+---
+
+## 🎓 Code Architecture
+
+### State Management
 
 ```javascript
-// Todos saved separately
-localStorage.setItem("todos", JSON.stringify(state.todos));
-
-// Theme saved separately
-localStorage.setItem("theme", state.theme);
+let state = {
+  todos: [], // Main todo array
+  history: [], // Undo history
+  filter: "all", // Current filter
+  theme: "light", // Theme preference
+  currentEditingId: null,
+  currentTaggingId: null,
+  currentDateSettingId: null,
+  availableTags: [], // Predefined tags
+  draggedElement: null,
+  draggedId: null,
+};
 ```
 
-**Auto-Load on Startup:**
-
-```javascript
-document.addEventListener("DOMContentLoaded", () => {
-  loadState(); // Load todos + theme
-  applyTheme(); // Apply saved theme
-  setupEventListeners();
-  render();
-});
-```
-
-**Data Structure:**
-
-```javascript
-{
-  "todos": "[{...}, {...}]",  // JSON array
-  "theme": "dark"             // "light" or "dark"
-}
-```
-
----
-
-## 🎯 App Initialization
-
-### Startup Sequence
+### Data Flow
 
 ```
-1. Page loads
-2. DOMContentLoaded event fires
-3. loadState() - restore todos + theme
-4. applyTheme() - apply saved theme to DOM
-5. setupEventListeners() - attach all listeners
-6. render() - display initial UI with theme
-7. App ready for interaction
+User Action
+    ↓
+Event Listener
+    ↓
+State Update (+ History Save)
+    ↓
+saveTodos()
+    ↓
+render()
+    ↓
+UI Updated
 ```
 
-### Initialization Code
+### Key Functions
 
-```javascript
-document.addEventListener("DOMContentLoaded", () => {
-  loadState(); // Step 3
-  applyTheme(); // Step 4
-  setupEventListeners(); // Step 5
-  render(); // Step 6
-});
-```
-
----
-
-## 🎨 CSS Variable Organization
-
-### Variable Categories
-
-**Colors:**
-
-- `--bg-color` - Page background
-- `--container-bg` - Todo container
-- `--text-color` - Main text
-- `--text-light` - Secondary text
-- `--text-empty` - Empty state text
-
-**Borders & Effects:**
-
-- `--input-border` - Input field border
-- `--hover-bg` - Hover background
-- `--shadow-color` - Box shadows
-- `--pending-border` - Pending todo border
-- `--completed-border` - Completed todo border
-- `--delete-hover` - Delete button hover
-- `--dragging-bg` - Dragging visual
-
----
-
-## 🤝 Version Comparison
-
-| Feature               | v3.0 | v3.1 |
-| --------------------- | ---- | ---- |
-| **Add Tasks**         | ✅   | ✅   |
-| **Mark Complete**     | ✅   | ✅   |
-| **Delete Tasks**      | ✅   | ✅   |
-| **Filter Tasks**      | ✅   | ✅   |
-| **Edit Inline**       | ✅   | ✅   |
-| **Drag & Drop**       | ✅   | ✅   |
-| **Empty State**       | ✅   | ✅   |
-| **LocalStorage**      | ✅   | ✅   |
-| **🌙 Dark Mode**      | ❌   | ✅   |
-| **CSS Variables**     | ❌   | ✅   |
-| **Theme Toggle**      | ❌   | ✅   |
-| **Theme Persistence** | ❌   | ✅   |
-| **Sun/Moon Icons**    | ❌   | ✅   |
+- `addTodo()` - Create new task
+- `toggleStar()` - Star/unstar task
+- `addTagToTodo()` - Add tag
+- `setDueDate()` - Set deadline
+- `undoLastChange()` - Undo action
+- `clearCompleted()` - Delete finished tasks
+- `render()` - Update entire UI
 
 ---
 
 ## 🎉 Browser Compatibility
 
-| Browser           | Version | Status          |
-| ----------------- | ------- | --------------- |
-| **Chrome**        | 60+     | ✅ Full Support |
-| **Firefox**       | 55+     | ✅ Full Support |
-| **Safari**        | 10.1+   | ✅ Full Support |
-| **Edge**          | 79+     | ✅ Full Support |
-| **Mobile Safari** | 10.3+   | ✅ Full Support |
-| **Chrome Mobile** | 60+     | ✅ Full Support |
+| Browser     | Version | Status          |
+| ----------- | ------- | --------------- |
+| **Chrome**  | 90+     | ✅ Full Support |
+| **Firefox** | 88+     | ✅ Full Support |
+| **Safari**  | 14+     | ✅ Full Support |
+| **Edge**    | 90+     | ✅ Full Support |
 
 ---
 
 ## 📚 Technical Stack
 
-- **Markup**: HTML5 (semantic, accessible)
-- **Styling**: CSS3 (variables, transitions, flexbox)
-- **Logic**: Vanilla JavaScript (state-based)
-- **Storage**: LocalStorage API (persistent)
-- **Fonts**: Google Fonts (Roboto)
-- **Icons**: SVG (scalable)
-- **Theming**: CSS custom properties
-
----
-
-## 💬 Tips & Tricks
-
-### For Best Experience
-
-- Try both light and dark modes
-- Toggle theme while viewing tasks
-- Notice smooth color transitions
-- Check icon changes with theme
-- Dark mode reduces eye strain
-- Light mode for bright environments
-
-### Productivity Tips
-
-- Use dark mode in low-light (evening/night)
-- Use light mode in bright environments
-- Theme preference persists across sessions
-- Toggle anytime without losing data
-- Experiment with your preference
-
-### Development Tips
-
-- Edit CSS variables to customize colors
-- Add more color variables as needed
-- Extend to 3+ theme options
-- Create seasonal themes
-- Modify transitions for different effects
-
----
-
-## 🚨 Troubleshooting
-
-### Theme Not Saving
-
-- Check localStorage is enabled
-- Verify theme key in DevTools
-- Test in non-private/incognito mode
-- Clear cache and reload
-
-### Theme Not Applying
-
-- Check body class toggle
-- Verify CSS variables defined
-- Test in different browser
-- Check for CSS conflicts
-
-### Icons Not Showing
-
-- Verify SVG syntax is correct
-- Check `stroke` property
-- Test SVG inline vs external
-- Verify `fill="none"` attribute
-
-### Transitions Not Smooth
-
-- Check transition duration
-- Verify ease timing function
-- Test in different browser
-- Check GPU acceleration enabled
-
----
-
-## 🎯 Future Enhancements
-
-**Possible Features:**
-
-- Multiple theme options (blue, green, purple, etc.)
-- Scheduled themes (auto dark at sunset)
-- Theme customization UI
-- Export theme settings
-- Community themes
-- Accessibility theme (high contrast)
-- Seasonal themes
-
-**Architecture Ready For:**
-
-- Theme switching library
-- Advanced state management
-- More complex theming logic
-- User preferences panel
-- Theme marketplace
-- Real-time sync across devices
+- **HTML5** - Semantic structure
+- **CSS3** - Modern design system
+- **JavaScript (ES6+)** - Functional programming
+- **LocalStorage** - Client-side persistence
+- **SVG Icons** - Scalable graphics
+- **Date API** - HTML5 date input
+- **CSS Grid/Flexbox** - Responsive layout
 
 ---
 
@@ -620,4 +565,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 **Organize Your Tasks, Simplify Your Life** ✅
 
-_Beautiful task management with light and dark themes!_
+_Professional task management with stars, tags, dates, and undo!_
